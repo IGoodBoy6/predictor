@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
 set -e
+
 ./gradlew --parallel -P chain-tests clean checkstyleMain checkstyleTest check --no-build-cache
 cd frontends/management.webui
 yarn install && yarn test:unit:coverage
