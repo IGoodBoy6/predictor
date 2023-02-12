@@ -19,6 +19,7 @@ public class PongTest extends IntegrationTest {
     void should_return_pong_when_ping() {
         MongoPong pong = mongoTemplate.findOne(query(GeneralCriteria.idIs("ping")), MongoPong.class);
         assertNotNull(pong);
+        assertDoesNotThrow(() -> pong.toDomain().verify());
         assertEquals("pong", pong.getPong());
     }
 
