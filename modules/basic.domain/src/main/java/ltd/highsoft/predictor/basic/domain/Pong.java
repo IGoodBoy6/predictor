@@ -30,7 +30,7 @@ public final class Pong {
 
     public Description description() {
         return createDescription(description -> {
-            description.put("id", id);
+            description.put("id", id.get());
             description.put("pong", pong.get());
         });
     }
