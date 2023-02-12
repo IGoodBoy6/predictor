@@ -1,4 +1,4 @@
-= Predictor Api Document
+= PREDICTOR API DOCUMENT
 highsoft.ltd
 :toc2: left
 :toclevels: 3
