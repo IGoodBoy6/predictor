@@ -5,6 +5,7 @@ dependencies {
     implementation project(":frameworks.application.core")
     implementation project(":frameworks.security.core")
     implementation project(":frameworks.application.spring")
+    implementation project(":frameworks.gateways.core")
     implementation libs.spring.boot.data.jpa
     implementation libs.spring.boot.data.mongodb
     implementation libs.spring.boot.quartz
