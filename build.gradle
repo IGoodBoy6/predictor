@@ -10,6 +10,7 @@ version = '1.0.0'
 dependencies {
     implementation project(":iam.gateways")
     implementation project(":basic.gateways")
+    implementation project(":predictor.gateways")
 }
 
 application {
