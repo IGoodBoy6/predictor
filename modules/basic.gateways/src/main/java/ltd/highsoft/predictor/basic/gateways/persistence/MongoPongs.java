@@ -11,7 +11,7 @@ public class MongoPongs implements Pongs {
     private final MongoAggregates<MongoPong, Pong> aggregates;
 
     public MongoPongs(MongoTemplate mongoTemplate) {
-        this.aggregates = new MongoAggregates<>(mongoTemplate, MongoPong.class, MongoPong::new, MongoPong::toDomain);
+        this.aggregates = new MongoAggregates<>(mongoTemplate, MongoPong.class, MongoPong::new, MongoPong::toDomain, Pong::verify);
     }
 
     @Override
