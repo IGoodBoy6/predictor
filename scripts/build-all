@@ -1,2 +1,6 @@
 #! /usr/bin/env sh
 chmod +x ./gradlew && ./gradlew clean build --no-build-cache
+./gradlew asciidoctor
+rm -rf ./src/main/resources/asciidoc
+mkdir -p ./src/main/resources/asciidoc/
+cp -f ./build/docs/asciidoc/api.html ./src/main/resources/asciidoc/apidoc.html

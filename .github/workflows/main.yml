@@ -24,7 +24,7 @@ jobs:
           DOCKER_ADDRESS: ${{ secrets.DOCKER_ADDRESS }}
           DOCKER_REPO_NAME: ${{secrets.DOCKER_REPO_NAME}}
         run: |
-          chmod +x ./gradlew && ./gradlew clean build --no-build-cache
+          ./scripts/build-all
           time=$(date "+%Y%m%d")
           docker login --username=$DOCKER_USERNAME --password=$DOCKER_PASSWORD
           docker build -t $DOCKER_ADDRESS/$DOCKER_REPO_NAME:$time . && docker push $DOCKER_ADDRESS/$DOCKER_REPO_NAME:$time

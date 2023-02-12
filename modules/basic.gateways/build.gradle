@@ -1,0 +1,7 @@
+dependencies {
+    api project(":frameworks.gateways.core")
+    implementation libs.spring.context
+    implementation libs.spring.boot.web
+    implementation libs.spring.data.commons
+    implementation libs.test.spring.boot.test
+}
