@@ -1,4 +1,4 @@
-= Predictor API文档
+= Predictor Api Document
 highsoft.ltd
 :toc2: left
 :toclevels: 3
