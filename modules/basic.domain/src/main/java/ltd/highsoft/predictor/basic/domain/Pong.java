@@ -1,6 +1,8 @@
 package ltd.highsoft.predictor.basic.domain;
 
-import ltd.highsoft.frameworks.domain.core.ValueSink;
+import ltd.highsoft.frameworks.domain.core.*;
+
+import static ltd.highsoft.frameworks.domain.core.MapBasedDescriptionFactory.createDescription;
 
 public final class Pong {
 
@@ -20,12 +22,11 @@ public final class Pong {
         this.pong = pong;
     }
 
-    public String id() {
-        return id;
-    }
-
-    public String pong() {
-        return pong;
+    public Description description() {
+        return createDescription(description -> {
+            description.put("id", id);
+            description.put("pong", pong);
+        });
     }
 
     public void content(ValueSink sink) {

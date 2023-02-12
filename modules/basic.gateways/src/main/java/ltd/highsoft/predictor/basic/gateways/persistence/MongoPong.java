@@ -14,8 +14,8 @@ public class MongoPong {
     private String pong;
 
     public MongoPong(Pong pong) {
-        this.id = pong.id();
-        this.pong = pong.pong();
+        this.id = pong.description().get("id");
+        this.pong = pong.description().get("pong");
     }
 
     public Pong toDomain() {
