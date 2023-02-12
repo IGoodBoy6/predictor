@@ -2,7 +2,7 @@ package ltd.highsoft.predictor.test.persistence;
 
 import ltd.highsoft.frameworks.test.mongo.GeneralCriteria;
 import ltd.highsoft.predictor.IntegrationTest;
-import ltd.highsoft.predictor.ping.Pong;
+import ltd.highsoft.predictor.basic.gateways.persistence.MongoPong;
 import org.junit.jupiter.api.Test;
 import org.springframework.data.mongodb.core.MongoTemplate;
 
@@ -17,7 +17,7 @@ public class PongTest extends IntegrationTest {
 
     @Test
     void should_return_pong_when_ping() {
-        Pong pong = mongoTemplate.findOne(query(GeneralCriteria.idIs("ping")), Pong.class);
+        MongoPong pong = mongoTemplate.findOne(query(GeneralCriteria.idIs("ping")), MongoPong.class);
         assertNotNull(pong);
         assertEquals("pong", pong.getPong());
     }

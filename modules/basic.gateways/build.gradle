@@ -1,7 +1,11 @@
 dependencies {
     api project(":frameworks.gateways.core")
+    api project(":frameworks.persistence.mongo")
+    api project(":basic.application")
     implementation libs.spring.context
     implementation libs.spring.boot.web
     implementation libs.spring.data.commons
+    implementation libs.spring.boot.data.mongodb
+    implementation libs.spring.boot.data.jpa
     implementation libs.test.spring.boot.test
 }
