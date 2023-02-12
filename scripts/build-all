@@ -1,4 +1,5 @@
 #! /usr/bin/env sh
+set -e
 ./scripts/check-all-for-deploy
 rm -rf ./src/main/resources/asciidoc
 mkdir -p ./src/main/resources/asciidoc/
