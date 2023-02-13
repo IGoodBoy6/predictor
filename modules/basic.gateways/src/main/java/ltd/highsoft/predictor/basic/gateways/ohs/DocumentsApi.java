@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class DocumentsApi {
 
     @RequestMapping
-    public String test() {
+    public String docs() {
         return "apidoc.html";
     }
 
