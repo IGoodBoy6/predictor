@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import javax.annotation.Resource;
 
 @OpenHostService
-public class PingController {
+public class PingsApi {
 
     private @Resource PingUseCase pingUseCase;
 

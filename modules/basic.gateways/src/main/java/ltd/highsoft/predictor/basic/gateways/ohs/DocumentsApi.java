@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @StaticResource
 @RequestMapping("/docs")
-public class DocumentController {
+public class DocumentsApi {
 
     @RequestMapping
     public String test() {
