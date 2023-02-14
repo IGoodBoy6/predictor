@@ -8,11 +8,11 @@ import ltd.highsoft.frameworks.domain.core.fields.*;
 public class Identity {
 
     private final Id id;
-    private final Name name;
+    private final GlobalName name;
 
     public Identity(String id, String name) {
         this.id = new Id(id);
-        this.name = new Name(name);
+        this.name = new GlobalName(name);
     }
 
     public String id() {

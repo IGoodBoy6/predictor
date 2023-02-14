@@ -8,7 +8,7 @@ public final class GlobalName extends DomainField<String> {
     public GlobalName(String value) {
         super(value);
         final var minLength = 4;
-        final var maxLength = 12;
+        final var maxLength = 16;
         final String usernameRegex = "^([a-zA-Z])[0-9a-zA-Z_]{1,}$";
         addRule(anything().notNull());
         addRule(string().notEmpty());

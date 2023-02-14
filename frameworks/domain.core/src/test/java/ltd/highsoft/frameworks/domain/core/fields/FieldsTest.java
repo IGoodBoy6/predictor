@@ -247,7 +247,7 @@ public class FieldsTest {
             "Neil^Wang",
             "Neil王",
             "N",
-            "NeilWangNeilWang",
+            "NeilWangAndNeilWang",
             "_neil",
             "4neil"
         })
