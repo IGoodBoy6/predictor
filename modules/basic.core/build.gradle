@@ -1,3 +1,5 @@
 dependencies {
     api project(":frameworks.payload.core")
+    api project(":frameworks.domain.core")
+    testImplementation project(":frameworks.test.context")
 }
