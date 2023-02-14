@@ -15,7 +15,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'temurin'
-          java-version: '17'
+          java-version: '11'
       - name: Check add and build docker image.
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
