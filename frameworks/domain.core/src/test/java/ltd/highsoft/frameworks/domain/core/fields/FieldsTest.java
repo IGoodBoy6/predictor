@@ -132,11 +132,69 @@ public class FieldsTest {
     }
 
     @Nested
+    class GeneralInformationTest {
+
+        @Test
+        void should_create_general_information() {
+            assertEquals("Content", new GeneralInformation("Content").get());
+        }
+
+        @ParameterizedTest
+        @ValueSource(strings = {
+            "",
+            "   ",
+            "1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890" +
+                "12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901"
+        })
+        void should_not_pass_when_invalid_general_information(String information) {
+            assertThrows(NotAllowedValueInDomainException.class, () -> new GeneralInformation(information).verify());
+        }
+
+        @ParameterizedTest
+        @ValueSource(strings = {
+            "Content."
+        })
+        void should_pass_when_valid_general_information(String information) {
+            assertDoesNotThrow(() -> new GeneralInformation(information).verify());
+        }
+
+    }
+
+    @Nested
     class NameTest {
 
         @Test
         void should_create_name() {
             assertEquals("Neil", new Name("Neil").get());
+        }
+
+    }
+
+    @Nested
+    class UrlTest {
+
+        @Test
+        void should_create_url() {
+            assertEquals("https://example.com", new Url("https://example.com").get());
+        }
+
+        @ParameterizedTest
+        @ValueSource(strings = {
+            "hello",
+            "https://example【】",
+            "hts://example.com",
+            "https://example.cn?a=%20example",
+        })
+        void should_not_pass_when_invalid_url(String url) {
+            assertThrows(NotAllowedValueInDomainException.class, () -> new Url(url).verify());
+        }
+
+        @ParameterizedTest
+        @ValueSource(strings = {
+            "https://example.com"
+        })
+        void should_pass_when_valid_email(String url) {
+            assertDoesNotThrow(() -> new Url(url).verify());
         }
 
     }

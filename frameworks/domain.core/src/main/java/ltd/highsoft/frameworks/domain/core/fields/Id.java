@@ -5,7 +5,7 @@ import ltd.highsoft.frameworks.domain.core.GlobalIdGenerator;
 import static ltd.highsoft.frameworks.domain.core.fields.DomainFieldRule.Anything.anything;
 import static ltd.highsoft.frameworks.domain.core.fields.DomainFieldRule.StringThing.string;
 
-public class Id extends DomainField<String> {
+public final class Id extends DomainField<String> {
 
     public Id() {
         this(GlobalIdGenerator.nextId());

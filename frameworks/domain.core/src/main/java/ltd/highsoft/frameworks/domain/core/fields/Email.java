@@ -2,7 +2,7 @@ package ltd.highsoft.frameworks.domain.core.fields;
 
 import static ltd.highsoft.frameworks.domain.core.fields.DomainFieldRule.StringThing.string;
 
-public class Email extends GeneralInformation {
+public final class Email extends GeneralInformation {
 
     public Email(String value) {
         super(value);

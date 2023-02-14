@@ -3,7 +3,7 @@ package ltd.highsoft.frameworks.domain.core.fields;
 import static ltd.highsoft.frameworks.domain.core.fields.DomainFieldRule.Anything.anything;
 import static ltd.highsoft.frameworks.domain.core.fields.DomainFieldRule.StringThing.string;
 
-public class Username extends DomainField<String> {
+public final class Username extends DomainField<String> {
 
     public Username(String value) {
         super(value);
