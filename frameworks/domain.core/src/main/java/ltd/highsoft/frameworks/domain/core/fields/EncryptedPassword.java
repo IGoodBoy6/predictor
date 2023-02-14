@@ -1,15 +1,13 @@
 package ltd.highsoft.frameworks.domain.core.fields;
 
-import java.util.*;
-
-import static com.google.common.base.Charsets.UTF_8;
+import java.util.Objects;
 
 public final class EncryptedPassword {
 
     private final String value;
 
     public EncryptedPassword(Password password) {
-        this.value = Base64.getEncoder().encodeToString(password.loadPlaintext().getBytes(UTF_8));
+        this.value = password.encrypting();
     }
 
     public boolean matches(Password password) {

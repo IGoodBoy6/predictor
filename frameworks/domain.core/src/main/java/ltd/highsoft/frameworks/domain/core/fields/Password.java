@@ -1,5 +1,8 @@
 package ltd.highsoft.frameworks.domain.core.fields;
 
+import java.util.Base64;
+
+import static com.google.common.base.Charsets.UTF_8;
 import static ltd.highsoft.frameworks.domain.core.I18nMessage.message;
 import static ltd.highsoft.frameworks.domain.core.fields.DomainFieldRule.Anything.anything;
 import static ltd.highsoft.frameworks.domain.core.fields.DomainFieldRule.StringThing.string;
@@ -29,8 +32,8 @@ public final class Password extends DomainField<String> {
         throw new IllegalOperationException(message("error:cannot-get-from-password"));
     }
 
-    String loadPlaintext() {
-        return super.get();
+    String encrypting() {
+        return Base64.getEncoder().encodeToString(super.get().getBytes(UTF_8));
     }
 
 }
