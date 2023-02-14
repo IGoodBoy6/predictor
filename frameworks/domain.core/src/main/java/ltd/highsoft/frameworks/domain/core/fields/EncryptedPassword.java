@@ -4,7 +4,7 @@ import java.util.*;
 
 import static com.google.common.base.Charsets.UTF_8;
 
-public class EncryptedPassword {
+public final class EncryptedPassword {
 
     private final String value;
 
