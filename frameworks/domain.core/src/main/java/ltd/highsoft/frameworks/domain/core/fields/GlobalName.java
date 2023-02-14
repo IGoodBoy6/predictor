@@ -14,7 +14,7 @@ public final class GlobalName extends DomainField<String> {
         addRule(string().notEmpty());
         addRule(string().minLength(minLength));
         addRule(string().maxLength(maxLength));
-        addRule(string().regex(usernameRegex));
+        addRule(string().regex(usernameRegex, "error.username-not-match-format"));
     }
 
 }

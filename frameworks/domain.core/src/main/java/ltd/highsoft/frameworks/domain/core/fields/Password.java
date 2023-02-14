@@ -19,7 +19,7 @@ public final class Password extends DomainField<String> {
         addRule(string().notEmpty());
         addRule(string().minLength(minLength));
         addRule(string().maxLength(maxSize));
-        addRule(string().regex(passwordRegex));
+        addRule(string().regex(passwordRegex, "error.password-not-match-format"));
         super.verify();
     }
 

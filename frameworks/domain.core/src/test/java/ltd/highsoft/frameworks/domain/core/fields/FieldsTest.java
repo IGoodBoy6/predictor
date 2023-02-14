@@ -71,13 +71,13 @@ public class FieldsTest {
 
         @Test
         void should_match_regex() {
-            assertThrows(NotAllowedValueInDomainException.class, () -> string().regex("^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)+$")
+            assertThrows(NotAllowedValueInDomainException.class, () -> string().regex("^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)+$", "error.value-do-not-match-regex")
                 .verify("Neil"), "error.value-do-not-match-regex");
         }
 
         @Test
         void should_not_match_regex() {
-            assertDoesNotThrow(() -> string().regex("^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)+$")
+            assertDoesNotThrow(() -> string().regex("^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)+$", "error.value-do-not-match-regex")
                 .verify("a@qq.com"));
         }
 
