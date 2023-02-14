@@ -1,4 +1,4 @@
-FROM openjdk:17-oracle
+FROM openjdk:17-jdk-slim
 MAINTAINER Neil wangweili457@gmail.com
 ENV TZ "Asia/Shanghai"
 ADD build/libs/predictor-1.0.0.jar  /data/apps/predictor.jar
