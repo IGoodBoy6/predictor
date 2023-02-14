@@ -5,7 +5,7 @@ import ltd.highsoft.frameworks.domain.core.fields.*;
 public class User {
 
     private final Id id;
-    private final Username username;
+    private final GlobalName globalName;
     private final Name name;
     private final Email email;
     private final Gender gender;
@@ -14,9 +14,9 @@ public class User {
     private final Organization organization;
     private final Location location;
 
-    public User(Id id, Username username, Name name, Email email, Gender gender, LongText biography, Url url, Organization organization, Location location) {
+    public User(Id id, GlobalName globalName, Name name, Email email, Gender gender, LongText biography, Url url, Organization organization, Location location) {
         this.id = id;
-        this.username = username;
+        this.globalName = globalName;
         this.name = name;
         this.email = email;
         this.gender = gender;

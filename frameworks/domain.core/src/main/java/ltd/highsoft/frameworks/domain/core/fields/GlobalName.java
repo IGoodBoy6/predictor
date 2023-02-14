@@ -3,9 +3,9 @@ package ltd.highsoft.frameworks.domain.core.fields;
 import static ltd.highsoft.frameworks.domain.core.fields.DomainFieldRule.Anything.anything;
 import static ltd.highsoft.frameworks.domain.core.fields.DomainFieldRule.StringThing.string;
 
-public final class Username extends DomainField<String> {
+public final class GlobalName extends DomainField<String> {
 
-    public Username(String value) {
+    public GlobalName(String value) {
         super(value);
         final var minLength = 4;
         final var maxLength = 12;

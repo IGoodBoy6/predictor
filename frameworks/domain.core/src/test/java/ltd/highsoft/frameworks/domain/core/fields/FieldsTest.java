@@ -234,11 +234,11 @@ public class FieldsTest {
     }
 
     @Nested
-    class UsernameTest {
+    class GlobalNameTest {
 
         @Test
-        void should_create_username() {
-            assertEquals("NeilWang", new Username("NeilWang").get());
+        void should_create_global_name() {
+            assertEquals("NeilWang", new GlobalName("NeilWang").get());
         }
 
         @ParameterizedTest
@@ -251,8 +251,8 @@ public class FieldsTest {
             "_neil",
             "4neil"
         })
-        void should_not_pass_when_invalid_username(String username) {
-            assertThrows(NotAllowedValueInDomainException.class, () -> new Username(username).verify());
+        void should_not_pass_when_invalid_global_name(String globalName) {
+            assertThrows(NotAllowedValueInDomainException.class, () -> new GlobalName(globalName).verify());
         }
 
         @ParameterizedTest
@@ -263,8 +263,8 @@ public class FieldsTest {
             "N0Wang",
             "Neil_Wang0"
         })
-        void should_pass_when_valid_username(String username) {
-            assertDoesNotThrow(() -> new Username(username).verify());
+        void should_pass_when_valid_global_name(String globalName) {
+            assertDoesNotThrow(() -> new GlobalName(globalName).verify());
         }
 
     }
