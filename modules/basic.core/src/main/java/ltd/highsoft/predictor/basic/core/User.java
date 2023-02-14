@@ -10,13 +10,13 @@ public class User {
     private final Username username;
     private final Name name;
     private final Email email;
-    private final String gender;
+    private final Gender gender;
     private final Optional<String> biography;
     private final Optional<String> url;
     private final Optional<String> organization;
     private final Optional<String> location;
 
-    public User(Id id, Username username, Name name, Email email, String gender, Optional<String> biography, Optional<String> url, Optional<String> organization, Optional<String> location) {
+    public User(Id id, Username username, Name name, Email email, Gender gender, Optional<String> biography, Optional<String> url, Optional<String> organization, Optional<String> location) {
         this.id = id;
         this.username = username;
         this.name = name;

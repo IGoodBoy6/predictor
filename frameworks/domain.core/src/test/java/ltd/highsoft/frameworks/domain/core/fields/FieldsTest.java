@@ -209,4 +209,14 @@ public class FieldsTest {
 
     }
 
+    @Nested
+    class GenderTest {
+
+        @Test
+        void should_create_gender_as_expect() {
+            assertEquals("Male", Gender.valueOf("MALE").toString());
+        }
+
+    }
+
 }
