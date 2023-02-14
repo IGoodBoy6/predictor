@@ -48,13 +48,23 @@ public class FieldsTest {
         }
 
         @Test
-        void should_2_length_verify_when_value_bigger_than_2() {
+        void should_max_length_2_verify_when_value_bigger_than_2() {
             assertThrows(NotAllowedValueInDomainException.class, () -> string().maxLength(2).verify("Neil"), "error.value-is-too-large");
         }
 
         @Test
-        void should_2_length_verify_when_value_smaller_than_2() {
+        void should_max_length_2_verify_when_value_smaller_than_2() {
             assertDoesNotThrow(() -> string().maxLength(2).verify("H"));
+        }
+
+        @Test
+        void should_min_length_2_verify_when_value_smaller_than_2() {
+            assertThrows(NotAllowedValueInDomainException.class, () -> string().minLength(2).verify("N"), "error.value-is-too-short");
+        }
+
+        @Test
+        void should_min_length_2_verify_when_value_bigger_than_2() {
+            assertDoesNotThrow(() -> string().minLength(2).verify("Neil"));
         }
 
         @Test
@@ -159,6 +169,42 @@ public class FieldsTest {
         })
         void should_pass_when_valid_email(String email) {
             assertDoesNotThrow(() -> new Email(email).verify());
+        }
+
+    }
+
+    @Nested
+    class UsernameTest {
+
+        @Test
+        void should_create_username() {
+            assertEquals("NeilWang", new Username("NeilWang").get());
+        }
+
+        @ParameterizedTest
+        @ValueSource(strings = {
+            "Neil Wang",
+            "Neil^Wang",
+            "Neil王",
+            "N",
+            "NeilWangNeilWang",
+            "_neil",
+            "4neil"
+        })
+        void should_not_pass_when_invalid_username(String username) {
+            assertThrows(NotAllowedValueInDomainException.class, () -> new Username(username).verify());
+        }
+
+        @ParameterizedTest
+        @ValueSource(strings = {
+            "NeilWang",
+            "NeilWang123",
+            "N_Wang",
+            "N0Wang",
+            "Neil_Wang0"
+        })
+        void should_pass_when_valid_username(String username) {
+            assertDoesNotThrow(() -> new Username(username).verify());
         }
 
     }

@@ -49,6 +49,10 @@ public final class DomainFieldRule<DomainFieldType> {
             return with(o -> o.length() <= maxLength, "error.value-is-too-large");
         }
 
+        public DomainFieldRule<String> minLength(int minLength) {
+            return with(o -> o.length() >= minLength, "error.value-is-too-short");
+        }
+
         public DomainFieldRule<String> notEmpty() {
             return with(StringUtils::isNoneBlank, "error.value-is-empty");
         }

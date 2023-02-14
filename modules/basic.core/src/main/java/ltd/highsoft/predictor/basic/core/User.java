@@ -7,7 +7,7 @@ import java.util.Optional;
 public class User {
 
     private final Id id;
-    private final Name username;
+    private final Username username;
     private final Name name;
     private final Email email;
     private final String gender;
@@ -16,7 +16,7 @@ public class User {
     private final Optional<String> organization;
     private final Optional<String> location;
 
-    public User(Id id, Name username, Name name, Email email, String gender, Optional<String> biography, Optional<String> url, Optional<String> organization, Optional<String> location) {
+    public User(Id id, Username username, Name name, Email email, String gender, Optional<String> biography, Optional<String> url, Optional<String> organization, Optional<String> location) {
         this.id = id;
         this.username = username;
         this.name = name;
