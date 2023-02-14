@@ -9,12 +9,12 @@ public class User {
     private final Name name;
     private final Email email;
     private final Gender gender;
-    private final LongText biography;
+    private final Text biography;
     private final Url url;
     private final Organization organization;
     private final Location location;
 
-    public User(Id id, GlobalName globalName, Name name, Email email, Gender gender, LongText biography, Url url, Organization organization, Location location) {
+    public User(Id id, GlobalName globalName, Name name, Email email, Gender gender, Text biography, Url url, Organization organization, Location location) {
         this.id = id;
         this.globalName = globalName;
         this.name = name;

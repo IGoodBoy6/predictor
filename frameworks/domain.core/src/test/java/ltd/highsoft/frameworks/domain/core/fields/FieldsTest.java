@@ -281,25 +281,25 @@ public class FieldsTest {
 
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-    class LongTextTest {
+    class TextTest {
 
         @Test
-        void should_create_long_text_as_expect() {
-            assertEquals("This is a text.", new LongText("This is a text.").get());
+        void should_create_text_as_expect() {
+            assertEquals("This is a text.", new Text("This is a text.").get());
         }
 
         @ParameterizedTest
         @MethodSource("textNotPassSource")
-        void should_not_pass_when_invalid_long_text(String text) {
-            assertThrows(NotAllowedValueInDomainException.class, () -> new LongText(text).verify());
+        void should_not_pass_when_invalid_text(String text) {
+            assertThrows(NotAllowedValueInDomainException.class, () -> new Text(text).verify());
         }
 
         @ParameterizedTest
         @ValueSource(strings = {
             "This is a text."
         })
-        void should_pass_when_valid_long_text(String text) {
-            assertDoesNotThrow(() -> new LongText(text).verify());
+        void should_pass_when_valid_text(String text) {
+            assertDoesNotThrow(() -> new Text(text).verify());
 
         }
 
