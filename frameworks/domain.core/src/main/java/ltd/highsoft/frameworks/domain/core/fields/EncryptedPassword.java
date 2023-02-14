@@ -9,7 +9,7 @@ public class EncryptedPassword {
     private final String value;
 
     public EncryptedPassword(Password password) {
-        this.value = Base64.getEncoder().encodeToString(password.get().getBytes(UTF_8));
+        this.value = Base64.getEncoder().encodeToString(password.loadPlaintext().getBytes(UTF_8));
     }
 
     public boolean matches(Password password) {

@@ -1,5 +1,6 @@
 package ltd.highsoft.frameworks.domain.core.fields;
 
+import static ltd.highsoft.frameworks.domain.core.I18nMessage.message;
 import static ltd.highsoft.frameworks.domain.core.fields.DomainFieldRule.Anything.anything;
 import static ltd.highsoft.frameworks.domain.core.fields.DomainFieldRule.StringThing.string;
 
@@ -21,6 +22,15 @@ public final class Password extends DomainField<String> {
 
     public EncryptedPassword encrypt() {
         return new EncryptedPassword(this);
+    }
+
+    @Override
+    public String get() {
+        throw new IllegalOperationException(message("error:cannot-get-from-password"));
+    }
+
+    String loadPlaintext() {
+        return super.get();
     }
 
 }

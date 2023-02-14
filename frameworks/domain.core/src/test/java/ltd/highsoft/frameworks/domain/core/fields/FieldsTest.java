@@ -343,7 +343,12 @@ public class FieldsTest {
 
         @Test
         void should_create_password() {
-            assertEquals("P@ssword", new Password("P@ssword").get());
+            assertEquals("P@ssword", new Password("P@ssword").loadPlaintext());
+        }
+
+        @Test
+        void should_throws_when_get_password_plain_text() {
+            assertThrows(IllegalOperationException.class, () -> new Password("P@ssword").get());
         }
 
         @ParameterizedTest
