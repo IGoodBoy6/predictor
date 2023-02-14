@@ -1,5 +1,6 @@
 dependencies {
     implementation project(":frameworks.security.core")
+    implementation project(":frameworks.gateways.core")
     implementation libs.spring.boot.web
     implementation libs.test.spring.boot.test
     implementation libs.test.spring.restdocs.restassured

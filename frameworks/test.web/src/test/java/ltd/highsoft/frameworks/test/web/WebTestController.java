@@ -1,10 +1,11 @@
 package ltd.highsoft.frameworks.test.web;
 
+import ltd.highsoft.frameworks.gateways.core.OpenHostService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 
-@RestController
+@OpenHostService
 @RequestMapping("/web-test")
 public class WebTestController {
 

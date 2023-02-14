@@ -1,7 +1,4 @@
 dependencies {
     implementation project(":frameworks.domain.core")
-    implementation libs.spring.context
-    implementation libs.spring.tx
     implementation libs.spring.boot.web
-    implementation libs.spring.boot.data.jpa
 }

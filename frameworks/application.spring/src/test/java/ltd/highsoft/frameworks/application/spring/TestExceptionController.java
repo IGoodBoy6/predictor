@@ -2,12 +2,13 @@ package ltd.highsoft.frameworks.application.spring;
 
 import ltd.highsoft.frameworks.application.core.UseCase;
 import ltd.highsoft.frameworks.domain.core.*;
+import ltd.highsoft.frameworks.gateways.core.OpenHostService;
 import ltd.highsoft.frameworks.security.core.*;
 import org.springframework.web.bind.annotation.*;
 
 import static ltd.highsoft.frameworks.domain.core.I18nMessage.message;
 
-@RestController
+@OpenHostService
 @RequestMapping("/test")
 @UseCase(requiredAuthorities = Authorities.ANONYMOUS)
 public class TestExceptionController {
