@@ -11,7 +11,7 @@ class UserTest {
 
     @Test
     void should_create_a_user() {
-        assertThat(new User(new Id(), new GlobalName(""), new Name(""), new Email(""), Gender.MALE, new Text(""), new Url(""), new Organization(""), new Location(""))).isNotNull();
+        assertThat(new User(new Id(), new GlobalName(""), "", new Name(""), new Email(""), Gender.MALE, new Text(""), new Url(""), new Organization(""), new Location(""))).isNotNull();
     }
 
 }
