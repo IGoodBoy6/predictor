@@ -3,7 +3,9 @@ package ltd.highsoft.frameworks.domain.core.fields;
 import ltd.highsoft.frameworks.domain.core.*;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
+import org.junit.jupiter.params.provider.*;
+
+import java.util.stream.*;
 
 import static ltd.highsoft.frameworks.domain.core.fields.DomainFieldRule.Anything.anything;
 import static ltd.highsoft.frameworks.domain.core.fields.DomainFieldRule.StringThing.string;
@@ -215,6 +217,45 @@ public class FieldsTest {
         @Test
         void should_create_gender_as_expect() {
             assertEquals("Male", Gender.valueOf("MALE").toString());
+        }
+
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    class LongTextTest {
+
+        @Test
+        void should_create_long_text_as_expect() {
+            assertEquals("This is a text.", new LongText("This is a text.").get());
+        }
+
+        @ParameterizedTest
+        @MethodSource("textNotPassSource")
+        void should_not_pass_when_invalid_long_text(String text) {
+            assertThrows(NotAllowedValueInDomainException.class, () -> new LongText(text).verify());
+        }
+
+        @ParameterizedTest
+        @ValueSource(strings = {
+            "This is a text."
+        })
+        void should_pass_when_valid_long_text(String text) {
+            assertDoesNotThrow(() -> new LongText(text).verify());
+
+        }
+
+        private Stream<Arguments> textNotPassSource() {
+            return Stream.of(
+                Arguments.of(""),
+                Arguments.of("   "),
+                Arguments.of(length2000())
+            );
+        }
+
+        private String length2000() {
+            final int length = 2000;
+            return IntStream.rangeClosed(0, length).mapToObj(String::valueOf).reduce((o1, o2) -> o1 + o2).orElse("");
         }
 
     }
