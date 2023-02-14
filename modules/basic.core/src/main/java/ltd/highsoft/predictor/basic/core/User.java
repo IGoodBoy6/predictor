@@ -9,7 +9,7 @@ public class User {
 
     public User(Id id, GlobalName globalName, Password password, Name name, Email email, Gender gender, Text biography, Url url, Organization organization, Location location) {
         this.account = new User.Account(id, globalName, email, password);
-        this.profile = new User.Profile(name, email, gender, biography, url, organization, location);
+        this.profile = new User.Profile(name, gender, biography, url, organization, location);
     }
 
     public static class Account {
@@ -37,7 +37,7 @@ public class User {
         private final Organization organization;
         private final Location location;
 
-        public Profile(Name name, Email email, Gender gender, Text biography, Url url, Organization organization, Location location) {
+        public Profile(Name name, Gender gender, Text biography, Url url, Organization organization, Location location) {
             this.name = name;
             this.gender = gender;
             this.biography = biography;
