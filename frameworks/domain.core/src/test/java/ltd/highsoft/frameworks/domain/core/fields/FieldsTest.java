@@ -338,4 +338,53 @@ public class FieldsTest {
 
     }
 
+    @Nested
+    class PasswordTest {
+
+        @Test
+        void should_create_password() {
+            assertEquals("P@ssword", new Password("P@ssword").get());
+        }
+
+        @ParameterizedTest
+        @ValueSource(strings = {
+            "",
+            "  ",
+            "PERDICTOR",
+            "predictor",
+            "@@@@@@@@@",
+            "1234567890",
+            "HelloWorld",
+            "HELLO@@@@@",
+            "HELLO12345",
+            "hello@@@@@",
+            "hello12345",
+            "@@@@@12345",
+        })
+        void should_not_pass_when_invalid_password(String password) {
+            assertThrows(NotAllowedValueInDomainException.class, () -> new Password(password).verify());
+        }
+
+        @ParameterizedTest
+        @ValueSource(strings = {
+            "Predict0r",
+            "P@ssword",
+            "hello_world0",
+        })
+        void should_pass_when_valid_password(String password) {
+            assertDoesNotThrow(() -> new Password(password).verify());
+        }
+
+        @Test
+        void should_password_encrypt_and_matches_itself() {
+            assertTrue(new Password("P@ssword").encrypt().matches(new Password("P@ssword")));
+        }
+
+        @Test
+        void should_password_encrypt_and_matches_another_word_return_false() {
+            assertFalse(new Password("P@ssword").encrypt().matches(new Password("P@ssword2")));
+        }
+
+    }
+
 }
