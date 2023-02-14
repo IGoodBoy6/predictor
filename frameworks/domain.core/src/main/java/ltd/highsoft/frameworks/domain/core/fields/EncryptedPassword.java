@@ -6,7 +6,7 @@ public final class EncryptedPassword {
 
     private final String value;
 
-    public EncryptedPassword(Password password) {
+    EncryptedPassword(Password password) {
         this.value = password.encrypting();
     }
 
