@@ -318,4 +318,24 @@ public class FieldsTest {
 
     }
 
+    @Nested
+    class OrganizationTest {
+
+        @Test
+        void should_create_organization() {
+            assertEquals("highsoft.ltd", new Organization("highsoft.ltd").get());
+        }
+
+    }
+
+    @Nested
+    class LocationTest {
+
+        @Test
+        void should_create_location() {
+            assertEquals("Shanghai, China", new Location("Shanghai, China").get());
+        }
+
+    }
+
 }

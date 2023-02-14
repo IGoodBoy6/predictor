@@ -2,8 +2,6 @@ package ltd.highsoft.predictor.basic.core;
 
 import ltd.highsoft.frameworks.domain.core.fields.*;
 
-import java.util.Optional;
-
 public class User {
 
     private final Id id;
@@ -13,10 +11,10 @@ public class User {
     private final Gender gender;
     private final LongText biography;
     private final Url url;
-    private final Optional<String> organization;
-    private final Optional<String> location;
+    private final Organization organization;
+    private final Location location;
 
-    public User(Id id, Username username, Name name, Email email, Gender gender, LongText biography, Url url, Optional<String> organization, Optional<String> location) {
+    public User(Id id, Username username, Name name, Email email, Gender gender, LongText biography, Url url, Organization organization, Location location) {
         this.id = id;
         this.username = username;
         this.name = name;

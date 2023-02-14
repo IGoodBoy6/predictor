@@ -4,8 +4,6 @@ import ltd.highsoft.frameworks.domain.core.fields.*;
 import ltd.highsoft.frameworks.test.context.WithId;
 import org.junit.jupiter.api.Test;
 
-import java.util.Optional;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
 @WithId("1")
@@ -13,7 +11,7 @@ class UserTest {
 
     @Test
     void should_create_a_user() {
-        assertThat(new User(new Id(), new Username(""), new Name(""), new Email(""), Gender.MALE, new LongText(""), new Url(""), Optional.empty(), Optional.empty())).isNotNull();
+        assertThat(new User(new Id(), new Username(""), new Name(""), new Email(""), Gender.MALE, new LongText(""), new Url(""), new Organization(""), new Location(""))).isNotNull();
     }
 
 }
