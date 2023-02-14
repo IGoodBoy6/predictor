@@ -1,7 +1,7 @@
 package ltd.highsoft.frameworks.domain.core.fields;
 
 public enum Gender {
-    MALE, FEMALE, SECRET;
+    MALE, FEMALE, SECRET, UNKNOWN;
 
     @Override
     public String toString() {
